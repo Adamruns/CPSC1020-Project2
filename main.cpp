@@ -34,8 +34,7 @@ int main (int argc, char const *argv[]){
         string realAnswer = quizVector[i].getAnswer();
         cout << quizVector[i].getQuestion() << endl;
         getline(cin, userAnswer);
-        cout << "Comparing " << "'" << userAnswer << "'" << " to " << "'" << realAnswer << "'" << endl;
-        if (userAnswer.compare(realAnswer) == 0){
+        if (userAnswer == realAnswer){
             quizVector[i].updateScore(1);
             numberCorrect += 1;
             cout << "Correct!" << endl;

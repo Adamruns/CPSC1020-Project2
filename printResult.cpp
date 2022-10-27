@@ -6,6 +6,6 @@ std::string printResult(int q, int c, int w){
     ss << std::left << "Number of Questions: " << q << "\n";
     ss << std::left << "Number correct answers: " << c << "\n";
     ss << std::left << "Number wrong answers " << w << "\n";
-    ss << std::left << "Final score: " << Quiz::getScore();
+    ss << std::left << "Final score: " << Quiz::getScore() << "\n";
     return (ss.str());
 }
