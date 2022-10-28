@@ -12,7 +12,7 @@ class Quiz {
         std::string getQuestion();
         std::string getAnswer();
         static int getScore();
-        void updateScore(int v);
+        static void updateScore(int v);
         std::string showDate();
 
         friend std::string printResult(int q, int c, int w);

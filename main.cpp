@@ -25,14 +25,14 @@ int main (int argc, char const *argv[]){
         quizVector.push_back(quizObject);
     }
     // This shuffles the vector using time random
-    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
-    shuffle ( quizVector.begin(), quizVector.end(), default_random_engine(seed));
-
+    srand(unsigned(time(0)));
+    random_shuffle( quizVector.begin(), quizVector.end());
 
     for(vector<Quiz>::size_type i = 0; i != quizVector.size(); i++) {
         string userAnswer;
         string realAnswer = quizVector[i].getAnswer();
         cout << quizVector[i].getQuestion() << endl;
+        cout << "Type in your answer: ";
         getline(cin, userAnswer);
         if (userAnswer == realAnswer){
             quizVector[i].updateScore(1);
@@ -44,7 +44,7 @@ int main (int argc, char const *argv[]){
             numberWrong += 1;
             cout << "Wrong! Correct Answer: " << realAnswer << endl;
         }
-        cout << "Current Score: " << Quiz::getScore() << endl;
+        cout << "Current Score: " << Quiz::getScore() << endl << endl;
 
     }
     cout << printResult(quizVector.size(), numberCorrect, numberWrong);
